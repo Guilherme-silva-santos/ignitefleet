@@ -1,6 +1,11 @@
-module.exports = function(api) {
-  api.cache(true);
+/* eslint-disable prettier/prettier */
+module.exports = function (api) {
+  api.cache(true)
   return {
     presets: ['babel-preset-expo'],
-  };
-};
+    plugins: [['module:react-native-dotenv', {
+      'moduleName': '@env',
+      'allowUndefined': false 
+    }]],
+  }
+}
